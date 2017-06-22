@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pin_name: MyString
+  address: MyString
+  description: MyText
+  map_id: 1
+  category_id: 1
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  pin_name: MyString
+  address: MyString
+  description: MyText
+  map_id: 1
+  category_id: 1
+  latitude: 9.99
+  longitude: 9.99

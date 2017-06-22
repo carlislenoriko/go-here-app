@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_name: MyString
+  description: MyText
+  public: false
+  user_id: 1
+
+two:
+  map_name: MyString
+  description: MyText
+  public: false
+  user_id: 1
