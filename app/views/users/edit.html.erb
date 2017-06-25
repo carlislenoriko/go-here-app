@@ -1,0 +1,14 @@
+<h2>EDIT UR ACCOUNT!!!</h2>
+
+<%= form_tag "/users/#{@user.id}", method: :patch do %>
+  <div>
+  First Name: <input type="text" name="first_name">
+  </div>
+  <div>
+  Last Name: <input type="text" name="last_name">
+  </div>
+  <div>
+  Email: <input type="text" name="email">
+  </div>
+  <input type="submit" value="Submit">
+<% end %>

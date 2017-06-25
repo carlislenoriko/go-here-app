@@ -27,6 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    render "show.html.erb"
   end
 
   def update
@@ -34,9 +36,7 @@ class UsersController < ApplicationController
     user.update(
     first_name: params[:first_name],
     last_name: params[:last_name],
-    email: params[:email],
-    password: params[:password],
-    password_confirmation: params[:password_confirmation]
+    email: params[:email]
     )
     redirect_to "/"
   end
