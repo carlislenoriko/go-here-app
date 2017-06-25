@@ -1,0 +1,23 @@
+<h2>Create a new account~</h2>
+
+<%= form_tag "/users", method: :post do %>
+  <div>
+  First Name: <input type="text" name="first_name">
+  </div>
+  <div>
+  Last Name: <input type="text" name="last_name">
+  </div>
+  <div>
+  Email: <input type="text" name="email">
+  </div>
+  <div>
+  Password: <input type="password" name="password">
+  </div>
+  <div>
+    Confirm password (for realsies!): <input type="password" name="password_confirmation">
+  </div>
+  <div>
+  Avatar: <input type="text" name="avatar">
+  </div>
+  <input type="submit" value="Submit">
+<% end %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/' => 'users#new'
+
   resources :users, except: :index
 #     users POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new
