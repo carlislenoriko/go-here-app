@@ -1,3 +1,11 @@
 <h2>New Map!</h2>
 
-<% form_tag 
+<%= form_tag "/maps", method: :post do %>
+  <div>
+  Map Name <input type="text" name="map_name">
+  </div>
+  <div>
+  Description <input type="text" name="description">
+  </div>
+  <input type="submit" value="Submit">
+<% end %>
