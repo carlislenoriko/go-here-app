@@ -4,9 +4,15 @@ class MapsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
+    map = Map.create(
+      map_name: params[:map_name],
+      description: params[:description]
+      )
+    redirect_to "/maps/index"
   end
 
   def edit
