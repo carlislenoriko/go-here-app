@@ -33,4 +33,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   # categories GET    /categories(.:format)     categories#index
   # category   GET    /categories/:id(.:format) categories#show
+
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
+  
 end
