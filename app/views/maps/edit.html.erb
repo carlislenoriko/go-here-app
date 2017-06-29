@@ -9,3 +9,5 @@
   </div>
   <input type="submit" value="Edit">
 <% end %>
+
+<%= button_to "Delete Map", {:action => "destroy", :id => @map.id}, :method => :delete %>

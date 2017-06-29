@@ -44,6 +44,9 @@ class MapsController < ApplicationController
   end
 
   def destroy
+    map = Map.find(params[:id])
+    map.destroy
+    redirect_to map
   end
   
 end
