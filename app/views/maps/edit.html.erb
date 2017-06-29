@@ -1,0 +1,11 @@
+<h1>EDIT UR <%= @map.map_name %> MAP </h1>
+
+<%= form_tag "/maps/#{@map.id}", method: :patch do %>
+  <div>
+  Map Name <input type="text" name="map_name" value="<%= @map.map_name %>">
+  </div>
+  <div>
+  Description <input type="textarea" name="description" value="<%= @map.description %>">
+  </div>
+  <input type="submit" value="Edit">
+<% end %>
