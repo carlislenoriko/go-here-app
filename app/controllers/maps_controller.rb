@@ -1,13 +1,13 @@
 class MapsController < ApplicationController
 
   def index
-    if current_user.id
-      @maps = Map.find(user_id: params[:user_id])
-      render "index.html.erb"
-    else
-      # flash[:warning] = "Please log in to see this page!"
-      redirect_to "/login"
-    end
+    # if current_user.id
+    #   user_id = params[:id]
+    @maps = Map.all
+    # else
+    #   # flash[:warning] = "Please log in to see this page!"
+    #   redirect_to "/login"
+    render "index.html.erb"
   end
 
   def new
@@ -19,7 +19,7 @@ class MapsController < ApplicationController
       map_name: params[:map_name],
       description: params[:description]
       )
-    redirect_to "/maps/index/"
+    redirect_to map
   end
 
   def edit
@@ -29,6 +29,7 @@ class MapsController < ApplicationController
   end
 
   def show
+    render "show.html.erb"
   end
 
   def destroy

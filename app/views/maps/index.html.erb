@@ -1,2 +1,6 @@
 <h1>ALL UR MAPS</h1>
 
+<% @maps.each do |map| %>
+  <a href="/maps/<%= map.id %>">
+  <%= map.map_name %></a>
+<% end %>
