@@ -18,11 +18,12 @@ class PinsController < ApplicationController
   end
 
   def edit
-    @map = Map.find(params[:id])
+    # @map = Map.find(params[:id])
     render "edit.html.erb"
   end
 
   def update
+    @pin = Pin.find(params[:id])
     map_id = params[:map_id]
     pin = Pin.update(
       pin_name: params[:pin_name],
@@ -37,7 +38,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = params[:id]
+    @pin = Pin.find(params[:id])
     render "show.html.erb"
   end
 

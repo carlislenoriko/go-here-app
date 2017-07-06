@@ -1,0 +1,28 @@
+<h1>Edit Pin</h1>
+
+<%= form_tag '/pins/#{pin.id}', method: :patch do %>
+  <div>
+    <%= label_tag :pin_name %>
+    <%= text_field_tag :pin_name %>
+  </div>
+  <div>
+    <%= label_tag :address %>
+    <%= text_field_tag :address %>
+  </div>
+  <div>
+    <%= label_tag :map_id %>
+    <%= text_field_tag :map_id %>
+  </div>
+  <div>
+    <%= label_tag :category_id %>
+    <%= text_field_tag :category_id %>
+    <!-- https://stackoverflow.com/questions/995923/drop-down-box-in-rails -->
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_area_tag :description %>
+  </div>
+  <div>
+    <%= submit_tag %>
+  </div>
+<% end %>
