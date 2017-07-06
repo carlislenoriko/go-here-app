@@ -37,7 +37,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @map = Map.find(params[:id])
+    @pin = params[:id]
     render "show.html.erb"
   end
 

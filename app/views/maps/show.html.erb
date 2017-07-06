@@ -1,7 +1,19 @@
 <h1>MAP</h1>
-
-<%= @map.map_name %>
-<%= @map.description %>
+<div>
+  <%= @map.map_name %><br>
+  <%= @map.description %>
+</div>
+<br>
+<br>
+<% @pins.each do |pin| %>
+  <div>
+    <%= pin.pin_name %><br>
+    <%= pin.description %><br>
+    <%= pin.address %><br>
+    <%= pin.category.category_name %><br>
+    <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
+  </div><br>
+<% end %>
 
 <a href="/maps/<%= @map.id %>/edit">Edit?</a>
 <a href="/pins/new">New Pin</a>
