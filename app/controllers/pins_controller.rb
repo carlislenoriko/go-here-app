@@ -23,13 +23,17 @@ class PinsController < ApplicationController
   end
 
   def update
-    map = Map.find(params[:id])
-    map.update(
-      map_name: params[:map_name],
-      description: params[:description]
+    map_id = params[:map_id]
+    pin = Pin.update(
+      pin_name: params[:pin_name],
+      description: params[:description],
+      address: params[:address],
+      latitude: latitude(params[:address]),
+      longitude: longitude(params[:address]),
+      map_id: map_id,
+      category_id: params[:category_id]
       )
-    # flash[:info] = "Contact Info Updated"
-    redirect_to "/maps/#{map.id}"
+    redirect_to "/maps/#{map_id}"
   end
 
   def show
