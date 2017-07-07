@@ -4,17 +4,17 @@ class PinsController < ApplicationController
   end
 
   def create
-    map_id = params[:map_id]
+    # @map = Map.find(params[:map_id])
     pin = Pin.create(
       pin_name: params[:pin_name],
       description: params[:description],
       address: params[:address],
       latitude: latitude(params[:address]),
       longitude: longitude(params[:address]),
-      map_id: map_id,
+      map_id: params[:map_id],
       category_id: params[:category_id]
       )
-    redirect_to "/maps/#{map_id}"
+    redirect_to "/maps/#{params[:map_id]}"
   end
 
   def edit

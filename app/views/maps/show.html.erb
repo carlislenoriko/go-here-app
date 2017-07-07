@@ -16,5 +16,7 @@
 <% end %>
 
 <a href="/maps/<%= @map.id %>/edit">Edit?</a>
-<a href="/pins/new">New Pin</a>
+
+<%= link_to "New Pin", { :action => "new", :controller => "pins", :map_id => @map.id } %>
+
 <a href="/maps">Back to all your Maps</a>

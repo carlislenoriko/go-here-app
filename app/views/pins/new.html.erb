@@ -10,13 +10,12 @@
     <%= text_field_tag :address %>
   </div>
   <div>
-    <%= label_tag :map_id %>
-    <%= text_field_tag :map_id %>
-  </div>
-  <div>
     <%= label_tag :category_id %>
     <%= text_field_tag :category_id %>
     <!-- https://stackoverflow.com/questions/995923/drop-down-box-in-rails -->
+  </div>
+  <div>
+    <%= hidden_field_tag "map_id", params[:map_id] %>
   </div>
   <div>
     <%= label_tag :description %>
