@@ -1,0 +1,6 @@
+<h1>Browse some categorized pins!</h1>
+
+<% @categories.each do |category| %>
+  <a href="/categories/<%= category.id %>">
+  <%= category.category_name %></a><br>
+<% end %>

@@ -1,0 +1,6 @@
+<%= @category.category_name %>
+
+<% @pins.each do |pin| %>
+  <a href="/pins/<%= pin.id %>">
+  <%= pin.pin_name %></a><br>
+<% end %>
