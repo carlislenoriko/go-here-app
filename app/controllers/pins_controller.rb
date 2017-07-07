@@ -19,13 +19,14 @@ class PinsController < ApplicationController
 
   def edit
     # @map = Map.find(params[:id])
+    @pin = Pin.find(params[:id])
     render "edit.html.erb"
   end
 
   def update
     @pin = Pin.find(params[:id])
     map_id = params[:map_id]
-    pin = Pin.update(
+    @pin.update(
       pin_name: params[:pin_name],
       description: params[:description],
       address: params[:address],
@@ -43,9 +44,10 @@ class PinsController < ApplicationController
   end
 
   def destroy
-    map = Map.find(params[:id])
-    map.destroy
-    redirect_to map
+    pin = Pin.find(params[:id])
+    map_id = pin.map_id
+    pin.destroy
+    redirect_to "/maps/#{map_id}"
   end
 
   def latitude(address)

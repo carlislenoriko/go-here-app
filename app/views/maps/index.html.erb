@@ -2,5 +2,7 @@
 
 <% @maps.each do |map| %>
   <a href="/maps/<%= map.id %>">
-  <%= map.map_name %></a>
+  <%= map.map_name %></a><br>
 <% end %>
+<br>
+<a href="/maps/new">New Map?</a>

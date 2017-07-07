@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get '/' => 'users#new'
+  # get '/home' => 'users#show'
 
   resources :users, except: :index
 #     users POST   /users(.:format)          users#create
