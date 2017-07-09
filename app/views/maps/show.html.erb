@@ -20,3 +20,9 @@
 <%= link_to "New Pin", { :action => "new", :controller => "pins", :map_id => @map.id } %>
 
 <a href="/maps">Back to all your Maps</a>
+
+<div id="map">
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=#{API_KEY}&callback=initMap">
+  </script>
+</div>
