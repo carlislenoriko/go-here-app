@@ -25,34 +25,31 @@
           var map = $scope.maps.find(function(map) {
             return map.id == map_id
           });
-          $scope.pins = map.pins;
-          console.log($scope.pins);
+          var pins = map.pins;
+          // console.log($scope.pins);
 
-          window.eqfeed_callback = function($scope.pins) {
-            
-          }
-
-
-
-          // for (var i=0; i<$scope.maps.length; i++) {
-          //   $scope.map = $scope.maps[i];
-          //   $scope.map.forEach(function(item) {
-
-          //   })
-          //   console.log($scope.map);
-          // };
-          // $scope.map = $scope.maps.map_id;
-          // console.log(map_id);
-          // console.log($scope.map);
+          var locations = [];
           
-          // $scope.maps.forEach(function(map) {
-          //   console.log(map);
-          // })
-      });
-       var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
+          pins.forEach(function(pin){
+            locations.push([pin.pin_name, pin.latitude, pin.longitude]);
+          })
+          console.log(locations);
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: new google.maps.LatLng(21.2895657, -157.8434701),
             zoom: 8
           });
+
+          var marker, i;
+
+          for (i=0; i<locations.length; i++) {
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+              map: map
+            })
+          }
+      });
+        
     }
 
     // $scope.user = Unirest.get("http://localhost:3000/api/v1/users/1").body;
