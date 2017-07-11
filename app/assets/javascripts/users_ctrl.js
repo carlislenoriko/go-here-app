@@ -9,12 +9,6 @@
     $scope.setup = function (id, mapId) {
       user_id = id;
       map_id = mapId;
-      // $http.get("http://localhost:3000/api/v1/users/" + user_id).then(function(response){
-      //     $scope.maps = response.data.maps;
-      //     $scope.maps.forEach(function(map) {
-      //       console.log(map);
-      //     })
-      // });
     }
 
     $window.initMap = function() {
@@ -26,17 +20,19 @@
             return map.id == map_id
           });
           var pins = map.pins;
-          // console.log($scope.pins);
 
           var locations = [];
-          
+
           pins.forEach(function(pin){
             locations.push([pin.pin_name, pin.latitude, pin.longitude]);
           })
           console.log(locations);
 
+          var lat_center = locations[0][1];
+          var lng_center = locations[0][2];
+
           var map = new google.maps.Map(document.getElementById('map'), {
-            center: new google.maps.LatLng(21.2895657, -157.8434701),
+            center: new google.maps.LatLng(lat_center, lng_center),
             zoom: 8
           });
 
@@ -52,7 +48,6 @@
         
     }
 
-    // $scope.user = Unirest.get("http://localhost:3000/api/v1/users/1").body;
     window.$scope = $scope;
   });
 

@@ -1,3 +1,6 @@
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap">
+</script>
 <h1><%= @category.category_name %></h1>
 
 <% @pins.each do |pin| %>
@@ -6,3 +9,9 @@
 <% end %>
 
 <a href="/categories">Back to Categories</a>
+
+<!-- <div ng-app="app">
+  <div ng-controller="categoriesCtrl" id='angularInit' ng-init="setup(<%= @cateogry.id %>, <%= @pin.id %>)">
+    <div id="map"></div>
+  </div>
+</div> -->

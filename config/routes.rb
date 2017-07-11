@@ -43,6 +43,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/users' => 'users#index'
       get '/users/:id' => 'users#show'
+
+      get '/categories' => 'categories#index'
+      get 'categories/:id' => 'categories#show'
     end
   end
 
