@@ -1,3 +1,6 @@
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap">
+</script>
 <h1>MAP</h1>
 <div>
   <%= @map.map_name %><br>
@@ -6,13 +9,13 @@
 <br>
 <br>
 <% @pins.each do |pin| %>
-  <div>
-    <%= pin.pin_name %><br>
-    <%= pin.description %><br>
-    <%= pin.address %><br>
-    <%= pin.category.category_name %><br>
-    <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
-  </div><br>
+<div>
+  <%= pin.pin_name %><br>
+  <%= pin.description %><br>
+  <%= pin.address %><br>
+  <%= pin.category.category_name %><br>
+  <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
+</div><br>
 <% end %>
 
 <a href="/maps/<%= @map.id %>/edit">Edit?</a>
@@ -21,8 +24,41 @@
 
 <a href="/maps">Back to all your Maps</a>
 
-<div id="map">
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap">
-  </script>
+<div ng-app="app">
+  <div ng-controller="usersCtrl" id='angularInit' ng-init="setup(<%= @map.user.id %>, <%= @map.id %>)">
+    <div id="map"></div>
+  </div>
 </div>
+
+
+
+
+
+
+window.eqfeed_callback = function(results) {
+  for (var i = 0; i < results.features.length; i++) {
+    var coords = results.features[i].geometry.coordinates;
+    var latLng = new google.maps.LatLng(coords[1],coords[0]);
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
