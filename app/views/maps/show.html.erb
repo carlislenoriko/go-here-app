@@ -8,21 +8,29 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
 </div>
 <br>
 <br>
-<% @pins.each do |pin| %>
 <div>
-  <%= pin.pin_name %><br>
-  <%= pin.description %><br>
-  <%= pin.address %><br>
-  <%= pin.category.category_name %><br>
-  <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
-</div><br>
-<% end %>
+  <% @pins.each do |pin| %>
+  <div>
+    <%= pin.pin_name %><br>
+    <%= pin.description %><br>
+    <%= pin.address %><br>
+    <%= pin.category.category_name %><br>
+    <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
+  </div><br>
+  <% end %>
+</div>
 
-<a href="/maps/<%= @map.id %>/edit">Edit?</a>
-
-<%= link_to "New Pin", { :action => "new", :controller => "pins", :map_id => @map.id } %>
-
-<a href="/maps">Back to all your Maps</a>
+<div class="buttons">
+  <div class="btn btn-default">
+    <%= link_to "Edit Map", {:action => "edit", :id => @map.id}, :method => :get %>
+  </div>
+  <div class="btn btn-default">
+    <%= link_to "New Pin", { :action => "new", :controller => "pins", :map_id => @map.id } %>
+  </div>
+  <div class="btn btn-default">
+    <%= link_to "Back to All Maps", {:action => "index", :controller => "maps"}, :method => :get %>
+  </div>
+</div>
 
 <div ng-app="app">
   <div ng-controller="usersCtrl" id='angularInit' ng-init="setup(<%= @map.user.id %>, <%= @map.id %>)">

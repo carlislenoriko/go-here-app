@@ -3,10 +3,12 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
 </script>
 <h1><%= @category.category_name %></h1>
 
-<% @pins.each do |pin| %>
-  <a href="/pins/<%= pin.id %>">
-  <%= pin.pin_name %></a><br>
-<% end %>
+<div class="listy">
+  <% @pins.each do |pin| %>
+    <a href="/pins/<%= pin.id %>">
+    <%= pin.pin_name %></a><br>
+  <% end %>
+</div>
 
 <a href="/categories">Back to Categories</a>
 
