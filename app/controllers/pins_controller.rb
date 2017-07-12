@@ -1,10 +1,12 @@
 class PinsController < ApplicationController
 
   def new
+    @categories = Category.all
   end
 
   def create
     # @map = Map.find(params[:map_id])
+    @categories = Category.all
     pin = Pin.create(
       pin_name: params[:pin_name],
       description: params[:description],
