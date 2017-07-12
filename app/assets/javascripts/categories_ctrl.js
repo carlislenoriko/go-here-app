@@ -13,12 +13,9 @@
     $window.initMap = function() {
       $http.get("http://localhost:3000/api/v1/categories/" + category_id).then(function(response){
           $scope.category = response.data;
-          console.log($scope.category);
 
-          var map = $scope.maps.find(function(map) {
-            return map.id == map_id
-          });
-          var pins = map.pins;
+          var pins = $scope.category.pins;
+          console.log(pins);
 
           var locations = [];
 
@@ -44,9 +41,7 @@
             })
           }
       });
-        
     }
-
     window.$scope = $scope;
   });
 

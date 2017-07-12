@@ -11,7 +11,7 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
 <a href="/categories">Back to Categories</a>
 
 <div ng-app="app">
-  <div ng-controller="categoriesCtrl" id='angularInit' ng-init="setup(<%= @cateogry.id %>)">
+  <div ng-controller="categoriesCtrl" id='angularInit' ng-init="setup(<%= @category.id %>)">
     <div id="map"></div>
   </div>
 </div>
