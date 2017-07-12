@@ -14,9 +14,11 @@
     <%= text_field_tag :map_id, @pin.map_id %>
   </div>
   <div>
-    <%= label_tag :category_id %>
-    <%= text_field_tag :category_id, @pin.category_id %>
-    <!-- https://stackoverflow.com/questions/995923/drop-down-box-in-rails -->
+     <select name="category_id" id="category_id">
+      <% @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.category_name %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     <%= label_tag :description %>

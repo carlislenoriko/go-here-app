@@ -2,10 +2,11 @@ class PinsController < ApplicationController
 
   def new
     @categories = Category.all
+    @map = Map.find(params[:map_id])
   end
 
   def create
-    # @map = Map.find(params[:map_id])
+    @map = Map.find(params[:map_id])
     @categories = Category.all
     pin = Pin.create(
       pin_name: params[:pin_name],
@@ -20,6 +21,7 @@ class PinsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     # @map = Map.find(params[:id])
     @pin = Pin.find(params[:id])
     render "edit.html.erb"

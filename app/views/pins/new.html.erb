@@ -1,4 +1,4 @@
-<h1>NEW PIN WHAT IS HAPPENING</h1>
+<h1>Add a Pin</h1>
 
 <%= form_tag '/pins', method: :post do %>
   <div>
@@ -26,3 +26,5 @@
     <%= submit_tag %>
   </div>
 <% end %>
+
+<a href="/maps/<%= @map.id %>">Back to <%= @map.map_name %> Map</a>
