@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
-  get '/' => 'users#new'
-  get '/about' => 'users#about'
+  get '/' => 'home#landing'
+  get '/about' => 'home#about'
+  get '/contact' => 'home#contact'
+
+  post '/search_results' => 'pins#search_results'
 
   resources :users, except: :index
 #     users POST   /users(.:format)          users#create

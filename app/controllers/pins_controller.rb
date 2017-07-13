@@ -54,6 +54,12 @@ class PinsController < ApplicationController
     redirect_to "/maps/#{map_id}"
   end
 
+  def search_results
+    search_text = params[:search]
+    @pins = Pin.where("pin_name LIKE ? OR address LIKE ?", "%#{search_text}%", "%#{search_text}%")
+    render "search_results.html.erb"
+  end
+
   def latitude(address)
     coordinates = Geocoder.coordinates(address)
     @latitude = coordinates[0]

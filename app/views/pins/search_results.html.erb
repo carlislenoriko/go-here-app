@@ -1,0 +1,8 @@
+<% @pins.each do |pin| %>
+  <div>
+  <%= pin.pin_name %><br>
+  <%= pin.address %><br>
+  <%= pin.description %><br>
+  <a href="/pins/<%= pin.id %>">See More</a>
+  </div>
+<% end %>
