@@ -15,8 +15,9 @@
 //= require bootstrap-sprockets
 //= require angular
 //= require app
+//= require geocomplete
 //= require_tree .
 
-
-
-
+$(function() {
+  $("#input").geocomplete();
+});
