@@ -10,12 +10,13 @@ class UsersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
+      avatar: params[:avatar]
       )
     if user.save
       session[:user_id] = user.id
       # flash[:success] = "Successfully created account! Woot!"
-      redirect_to '/'
+      redirect_to "/users/#{user.id}"
     else
       # flash[:warning] = "Invalid email or password!"
       redirect_to '/'
@@ -36,11 +37,12 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(
-    first_name: params[:first_name],
-    last_name: params[:last_name],
-    email: params[:email]
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      avatar: params[:avatar]
     )
-    redirect_to "/"
+    redirect_to "/users/#{user.id}"
   end
 
   def destroy
