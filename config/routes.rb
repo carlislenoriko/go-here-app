@@ -6,6 +6,16 @@ Rails.application.routes.draw do
 
   post '/search_results' => 'pins#search_results'
 
+  resources :friends
+#     friends GET    /friends(.:format)               friends#index
+#             POST   /friends(.:format)               friends#create
+#  new_friend GET    /friends/new(.:format)           friends#new
+# edit_friend GET    /friends/:id/edit(.:format)      friends#edit
+#      friend GET    /friends/:id(.:format)           friends#show
+#             PATCH  /friends/:id(.:format)           friends#update
+#             PUT    /friends/:id(.:format)           friends#update
+#             DELETE /friends/:id(.:format)           friends#destroy
+
   resources :users, except: :index
 #     users POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new

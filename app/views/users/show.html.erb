@@ -1,6 +1,8 @@
 <h2>YO <%= @user.first_name %> WHAT'S GOOD</h2>
 <div class="signup">
-  
+  <div>
+    <%= image_tag @user.avatar.url %>
+  </div>
   <a href="/maps">UR MAPS</a><br>
 
   <a href="/maps/new">New Map?</a><br><br>
