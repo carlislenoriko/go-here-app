@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       # flash[:success] = "Successfully created account! Woot!"
-      redirect_to "/users/#{user.id}"
+      redirect_to "/home"
     else
       # flash[:warning] = "Invalid email or password!"
       redirect_to '/'
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
     # @maps = Map.find_by(user_id: current_user.id)
     render "show.html.erb"
   end
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
       email: params[:email],
       avatar: params[:avatar]
     )
-    redirect_to "/users/#{user.id}"
+    redirect_to "/home"
   end
 
   def destroy

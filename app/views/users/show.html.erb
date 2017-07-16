@@ -1,14 +1,19 @@
-<h2>YO <%= @user.first_name %> WHAT'S GOOD</h2>
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>
 <div class="signup">
   <div>
     <%= image_tag @user.avatar.url %>
   </div>
-  <a href="/maps">UR MAPS</a><br>
-
-  <a href="/maps/new">New Map?</a><br><br>
-
-  <a href="/users/<%= @user.id %>/edit">Edit Your Profile</a><br><br>
-
-  <a href="/categories">Browse by Category</a><br><br>
-  <a href="/logout">Logout</a>
+  <div>
+    <h3>Maps</h3>
+    <% @user.maps.each do |map| %>
+      <div>
+        <a href="/maps/<%= map.id %>"><%= map.map_name %></a>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <% if current_user.id != @user.id %>
+      <h3>Follow <%= @user.first_name %></h3>
+    <% end %>
+  </div>
 </div>

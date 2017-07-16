@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/' => 'home#landing'
   get '/about' => 'home#about'
   get '/contact' => 'home#contact'
+  get '/home' => 'home#home'
 
   post '/search_results' => 'pins#search_results'
 

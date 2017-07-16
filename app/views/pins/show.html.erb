@@ -2,4 +2,8 @@
 <%= @pin.description %><br>
 <%= @pin.address %><br>
 <%= @pin.category.category_name %><br>
-<a href="/pins/#{<%= @pin.id %>/edit}">Edit pin?</a>
+<div>
+  <% if @pin.map.user_id == current_user.id %>
+    <a href="/pins/#{<%= @pin.id %>/edit}">Edit pin?</a>
+  <% end %>
+</div>
