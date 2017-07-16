@@ -12,11 +12,11 @@
     <% end %>
   </div>
   <div>
-    <% if current_user.id != @user.id && @friends.index(current_user.id)==false %>
+    <% if current_user.id != @user.id && @friends.index(current_user.id)==nil %>
       <div class="btn btn-default">
         <%= link_to "Follow #{ @user.first_name }", {:action => "create", :controller => :friends, :id => @user.id }, :method => :create %>
       </div>
-    <% else %>
+    <% elsif @friends.index(current_user.id) %>
       <div>
         You are following <%= @user.first_name %>
       </div>
