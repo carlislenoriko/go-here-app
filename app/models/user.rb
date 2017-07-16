@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :maps
   has_many :pins, through: :maps
   has_many :favorites
-  # has_many :friends
-  # has_many :followers, through: :friends
+  has_many :friends
+  has_many :followers, through: :friends
   
 
   has_attached_file :avatar,

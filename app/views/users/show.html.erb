@@ -12,8 +12,14 @@
     <% end %>
   </div>
   <div>
-    <% if current_user.id != @user.id %>
-      <h3>Follow <%= @user.first_name %></h3>
+    <% if current_user.id != @user.id && @friends.index(current_user.id)==false %>
+      <div class="btn btn-default">
+        <%= link_to "Follow #{ @user.first_name }", {:action => "create", :controller => :friends, :id => @user.id }, :method => :create %>
+      </div>
+    <% else %>
+      <div>
+        You are following <%= @user.first_name %>
+      </div>
     <% end %>
   </div>
 </div>

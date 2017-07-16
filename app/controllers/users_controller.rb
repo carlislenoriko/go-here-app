@@ -30,8 +30,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    # @maps = Map.find_by(user_id: current_user.id)
+    @friends = []
+    @user.friends.each do |friend|
+      @friends << friend.follower_id
+    end
     render "show.html.erb"
   end
 
