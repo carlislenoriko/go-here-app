@@ -23,9 +23,11 @@
 
           var locations = [];
 
+          var infowindow = new google.maps.InfoWindow({});
+
           pins.forEach(function(pin){
-            locations.push([pin.pin_name, pin.latitude, pin.longitude]);
-          })
+            locations.push([pin.pin_name, pin.latitude, pin.longitude, [pin.pin_name, pin.description]]);
+          });
           console.log(locations);
 
           var lat_center = locations[0][1];
@@ -42,7 +44,14 @@
             marker = new google.maps.Marker({
               position: new google.maps.LatLng(locations[i][1], locations[i][2]),
               map: map
-            })
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                  infowindow.setContent(locations[i][3][0] + " - " + locations[i][3][1]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
           }
       });
         
