@@ -40,6 +40,7 @@ class MapsController < ApplicationController
 
   def show
     @map = Map.find(params[:id])
+    @creator = User.find(@map.user_id)
     @pins = @map.pins.all
     render "show.html.erb"
   end
@@ -54,7 +55,6 @@ class MapsController < ApplicationController
     @user = current_user
     UserMailer.email_map(@user).deliver
     redirect_to "/maps"
-
   end
   
 end

@@ -1,0 +1,282 @@
+/* Min Widths */
+@import "mixins";
+@import "variables";
+
+@media only screen and (min-width: 992px) {
+
+    .container {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+
+}
+
+
+/* Max Widths */
+
+@media only screen and (max-width: 991px) {
+
+    .freelancer-image {
+        position: relative;
+        height: 420px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .parallax {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .demo-parallax-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .parallax-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .parallax-project-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .about-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .services-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .portfolio-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .shop-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .cart-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .blog-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .contact-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    .freelancer-header {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+    }
+
+    #image-slider .slide1 {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+        padding: 260px 0;
+    }
+
+    #image-slider .slide2 {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+        padding: 260px 0;
+    }
+
+    #image-slider .slide3 {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+        padding: 260px 0;
+    }
+
+    #image-slider .slide4 {
+        background-attachment: scroll !important;
+        -webkit-background-size: auto;
+        -moz-background-size: auto;
+        background-size: auto;
+        padding: 260px 0;
+    }
+
+    #image-slider .carousel-caption {
+        top: -80px;
+    }
+
+    .scroll-down {
+        margin-top: 110px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+#menu-toggle {
+    background: $light-grey-transparent;
+    display: block;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 5px;
+}
+
+.menu-footer {
+    position: relative;
+    margin-top: 60px;
+}
+
+#contact #contactForm {
+    width: 100%;
+}
+
+}
+
+
+@media only screen and (max-width: 575px) {
+
+#image-slider .carousel-caption {
+    top: 0;
+    position: relative;
+    left: 0;
+    padding: 0;
+}
+
+#image-slider .slider-content {
+    padding: 30px;
+}
+
+#image-slider .slide1 {
+    padding: 180px 0;
+}
+
+#image-slider .slide2 {
+    padding: 180px 0;
+}
+
+#image-slider .slide3 {
+    padding: 180px 0;
+}
+
+#image-slider .slide4 {
+    padding: 180px 0;
+}
+
+}
+
+
+@media only screen and (max-width: 560px) {
+
+    #call-to-action p {
+        margin-bottom: 0;
+        text-align: center;
+    }
+    
+    .cta-content .btn {
+        float: none;
+        margin: 20px auto;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 480px) {
+
+    .portfolio-items .col-xs-6 {
+        width: 100%;
+    }
+
+    .post-nav {
+        text-align: center;
+    }
+
+    .post-nav .left {
+        float: none;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .post-nav .right {
+        float: none;
+    }
+
+    #map.big {
+        height: 300px;
+    }
+
+}
