@@ -1,22 +1,39 @@
-<h1>EDIT UR <%= @map.map_name %> MAP </h1>
+value="<%= @map.description %>" does not work in textarea in theme form
+edit/delete buttons look wonky
 
-<div class="edit">
-  <%= form_tag "/maps/#{@map.id}", method: :patch do %>
-    <div class="form-group">
-      <label>Map Name</label>
-      <input type="text" name="map_name" value="<%= @map.map_name %>" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Description</label>
-      <input type="textarea" name="description" value="<%= @map.description %>" class="form-control">
-    </div>
-    <input class="btn btn-default" type="submit" value="Edit">
-  <% end %>
-  <br>
-  <div class="btn btn-default">
-    <%= link_to "Delete Map", {:action => "destroy", :id => @map.id}, :method => :delete %>
-  </div>
-  <div class="btn btn-default">
-    <%= link_to "Back to Map", {:action => "show", :id => @map.id}, :method => :get %>
-  </div>
-</div>
+<div id="contact" data-section="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h2>Edit Map!</h2>
+                  <%= form_tag "/maps/#{@map.id}", method: :patch do %>
+                      <form id="contactForm" data-toggle="validator">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="name" value="<%= @map.map_name %>" name="map_name" placeholder="MAP NAME" required>
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                  <textarea value="<%= @map.description %>" id="message" name="description" class="form-control" rows="5"></textarea>
+                                  <div class="help-block with-errors"></div>
+                                  </div>
+                                  <button type="submit" id="form-submit" class="btn btn-primary btn-md btn-form-submit">Edit Map!</button>
+                                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </form>
+                    <% end %>
+                     <div class="btn btn-default">
+                        <%= link_to "Delete Map", {:action => "destroy", :id => @map.id}, :method => :delete %>
+                      </div>
+                      <div class="btn btn-default">
+                        <%= link_to "Back to Map", {:action => "show", :id => @map.id}, :method => :get %>
+                      </div>
+                </div>
+            </div>
+        </div><!-- / container -->
+    </div><!-- / contact -->

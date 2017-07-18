@@ -1,8 +1,22 @@
-<h1>ALL UR MAPS</h1>
-
-<% @maps.each do |map| %>
-  <a href="/maps/<%= map.id %>">
-  <%= map.map_name %></a><br>
-<% end %>
-<br>
-<a href="/maps/new">New Map?</a>
+<div class="parallax-header">
+  <div class="header-content">
+    <h3 class="animated fadeInDown">All Your Maps</h3>
+  </div>
+</div>
+<div id="pricing" data-section="pricing">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <% @maps.each do |map| %>
+          <div class="pricing-table">
+            <div class="pricing-table-title">
+            <h5 class="pricing-title"><a href="/maps/<%= map.id %>">
+            <%= map.map_name %></a></h5></div>
+            <div class="pricint-table-content">
+            <%= map.description %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

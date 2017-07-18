@@ -60,12 +60,11 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
                                     <div>
                                       <% @pins.each do |pin| %>
                                       <div>
-                                        <%= pin.pin_name %><br>
-                                        <%= pin.description %><br>
-                                        <%= pin.address %><br>
-                                        <%= pin.category.category_name %><br>
+                                        <b><%= pin.pin_name %></b><br>
+                                        <p>About: <i><%= pin.description %></i><br>
+                                        Approx. Address: <i><%= pin.address %></i><br></p>
                                         <% if @map.user_id == current_user.id %>
-                                          <a href="/pins/<%= pin.id %>/edit">Edit pin?</a>
+                                          <a href="/pins/<%= pin.id %>/edit">Edit Pin</a>
                                         <% end %>
                                       </div><br>
                                       <% end %>

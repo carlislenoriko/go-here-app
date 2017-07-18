@@ -1,11 +1,31 @@
-<h2>New Map!</h2>
 
-<%= form_tag "/maps", method: :post do %>
-  <div>
-  Map Name <input type="text" name="map_name">
-  </div>
-  <div>
-  Description <input type="text" name="description">
-  </div>
-  <input type="submit" value="Submit">
-<% end %>
+    <div id="contact" data-section="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    <h2>New Map!</h2>
+                      <%= form_tag "/maps", method: :post do %>
+                          <form id="contactForm" data-toggle="validator">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="name" name="map_name" placeholder="MAP NAME" required>
+                                          <div class="help-block with-errors"></div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                      <textarea id="message" name="description" class="form-control" rows="5" placeholder="WHAT'S GOING ON IN THIS MAP?" required></textarea>
+                                      <div class="help-block with-errors"></div>
+                                      </div>
+                                      <button type="submit" id="form-submit" class="btn btn-primary btn-md btn-form-submit">Create!</button>
+                                      <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                      <div class="clearfix"></div>
+                                  </div>
+                              </div>
+                          </form>
+                        <% end %>
+                    </div>
+                </div>
+            </div><!-- / container -->
+        </div><!-- / contact -->
