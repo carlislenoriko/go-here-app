@@ -33,6 +33,9 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
     <div class="btn btn-default">
       <%= link_to "Back to All Maps", {:action => "index", :controller => "maps"}, :method => :get %>
     </div>
+    <div class="btn btn-default">
+      <%= link_to "Email Map", {:action => "email_map", :controller => "maps"}, :method => :post %>
+    </div>
   <% else %>
     <div class = "btn btn-default">
       <%= link_to "Back to profile", {:action => "show", :controller => "users", :id => @map.user_id }, :method => :get%>

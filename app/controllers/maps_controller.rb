@@ -49,5 +49,12 @@ class MapsController < ApplicationController
     map.destroy
     redirect_to map
   end
+
+  def email_map
+    @user = current_user
+    UserMailer.email_map(@user).deliver
+    redirect_to "/maps"
+
+  end
   
 end

@@ -70,6 +70,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     geocoder (1.4.4)
     geocomplete_rails (1.7.0)
       railties (>= 3.1)
@@ -197,16 +199,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   bcrypt
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)
   dotenv-rails
+  figaro
   geocoder
   geocomplete_rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mail
   paperclip (~> 5.0.0)
   pg (~> 0.18)
   puma (~> 3.0)

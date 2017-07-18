@@ -36,6 +36,7 @@ Rails.application.routes.draw do
  #          DELETE /pins/:id(.:format)       pins#destroy
 
   resources :maps
+  post '/email_map' => 'maps#email_map'
 #     maps GET    /maps(.:format)          maps#index
 #          POST   /maps(.:format)          maps#create
 #  new_map GET    /maps/new(.:format)      maps#new
