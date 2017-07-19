@@ -1,8 +1,32 @@
-<% @pins.each do |pin| %>
-  <div>
-  <%= pin.pin_name %><br>
-  <%= pin.address %><br>
-  <%= pin.description %><br>
-  <a href="/pins/<%= pin.id %>">See More</a>
+<div class="portfolio-header">
+  <div class="header-content">
+    <h3 class="animated fadeInDown">Search Results</h3>
+    <div class="separator-line animated fadeInUp"> </div>
+    <p>Searched for "<%= @search_text %>"</p>
   </div>
-<% end %>
+</div>
+
+<div id="contact" class="full-width" data-section="contact">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <form id="contactForm" data-toggle="validator">
+                  <div class="row">
+                      <div class="col-md-6">
+                        <h2>Pins</h2>
+                          <div>
+                            <% @pins.each do |pin| %>
+                            <div>
+                              <b><%= pin.pin_name %></b><br>
+                              <p>About: <i><%= pin.description %></i><br>
+                              Approx. Address: <i><%= pin.address %></i><br></p>
+                              <p><a href="/maps/<%= pin.map_id %>">See More</a></p>
+                            </div><br>
+                            <% end %>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div><!-- / container -->
