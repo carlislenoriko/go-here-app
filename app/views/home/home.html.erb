@@ -17,9 +17,9 @@
                     </div>
                     <div class="pricing-table-content">
                         <ul>
-                            <li><a href="/maps">View Your Maps</a></li>
-                            <li><a href="/users/<%= @user.id %>/edit">Edit Your Profile</a></li>
-                            <li><a href="/logout">Logout</a></li>
+                            <li><i class="lnr lnr-map"></i> <a href="/maps">View Your Maps</a></li>
+                            <li><i class="lnr lnr-pencil"></i> <a href="/users/<%= @user.id %>/edit">Edit Your Profile</a></li>
+                            <li><i class="lnr lnr-star"></i> <a href="/logout">Logout</a></li>
                         </ul>
                     </div>
                 </div><!-- / pricing-table -->
@@ -32,7 +32,7 @@
                     <div class="pricing-table-content">
                         <ul>
                           <% @friends.each do |friend| %>
-                            <li><a href="/users/<%= friend.id %>"> <%= friend.first_name %> </a></li>
+                            <li><i class="lnr lnr-heart"></i><a href="/users/<%= friend.id %>"> <%= friend.first_name %> </a></li>
                           <% end %>
                         </ul>
                     </div>

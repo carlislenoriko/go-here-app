@@ -5,9 +5,10 @@
 </div>
 <div id="pricing" data-section="pricing">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <% @maps.each do |map| %>
+    <% @maps.each_slice(3) do |map_threes| %>
+      <div class="row">
+      <% map_threes.each do |map| %>
+        <div class="col-md-4">
           <div class="pricing-table">
             <div class="pricing-table-title">
             <h5 class="pricing-title"><a href="/maps/<%= map.id %>">
@@ -15,8 +16,9 @@
             <div class="pricint-table-content">
             <%= map.description %></div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

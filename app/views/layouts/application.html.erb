@@ -4,17 +4,17 @@
     <title>Go Here</title>
     <%= csrf_meta_tags %>
 
-    <link href="vendor/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
-    <link href="vendor/assets/stylesheets/style.css" rel="stylesheet">
-    <link href="vendor/assets/stylesheets/owl.carousel.css" rel="stylesheet">
-    <link href="vendor/assets/stylesheets/owl.theme.css" rel="stylesheet">
-    <link href="vendor/assets/stylesheets/animate.css" rel="stylesheet">
-    <link href="vendor/assets/stylesheets/linear-icons.css" rel="stylesheet">
+    <link href="/assets/stylesheets/style.css" rel="stylesheet">
+    <link href="/assets/stylesheets/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/stylesheets/owl.theme.css" rel="stylesheet">
+    <link href="/assets/stylesheets/animate.css" rel="stylesheet">
+    <link href="/assets/stylesheets/linear-icons.css" rel="stylesheet">
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,600,700' rel='stylesheet' type='text/css'>
-    <link href="vendor/assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/assets/fonts/linear-icons.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/fonts/linear-icons.css" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -24,27 +24,23 @@
     <div id="wrapper" class>
       <div id="sidebar-wrapper" data-section="facts">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand">
           <% if current_user %>
+            <li class="sidebar-brand">
               <a class="menu-item" href="/home">Go Here!</a></li>
-              <li><a class="menu-item" href="/home">Home</a></li>
-              <li><a class="menu-item" href="/maps">Your Maps</a></li>
-              <li><i class="facts-icon lnr lnr-pencil"></i><a class="menu-item" href="/maps/new">New Map!</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a class="menu-item" href="/categories">Browse Categories</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a class="menu-item" href="/logout">Logout</a></li>
+              <li><i class="lnr lnr-home"></i><a class="menu-item" href="/home">Home</a></li>
+              <li><i class="lnr lnr-map"></i><a class="menu-item" href="/maps">Your Maps</a></li>
+              <li><i class="lnr lnr-pencil"></i><a class="menu-item" href="/maps/new">New Map!</a></li>
+              <li><i class="lnr lnr-select"></i><a class="menu-item" href="/categories">Browse Categories</a></li>
+              <li><i class="lnr lnr-star"></i><a class="menu-item" href="/logout">Logout</a></li>
               <li>
-              <% if current_user %>
-
                 <%= form_tag "/search_results", method: :post do %>
                   <%= text_field_tag :search %>
                   <%= submit_tag "Search" %>
                 <% end %>
-              <% end %>
               </li>
             <% end %>
-            <% if !current_user %>
+          <% if !current_user %>
+            <li class="sidebar-brand">
               <a class="menu-item" href="/">Go Here!</a>
               </li>
               <li><a class="menu-item" href="/users/new">New Account</a></li>

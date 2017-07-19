@@ -13,31 +13,31 @@ src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=
                 <div class="row">
                     <div class="col-sm-6">
                         <% if @map.user_id == current_user.id %>
-                          <div class="btn btn-default">
+                          <div class="btn btn-default btn-block">
                             <%= link_to "Edit Map", {:action => "edit", :id => @map.id}, :method => :get %>
                           </div>
-                          <div class="btn btn-default">
+                          <div class="btn btn-default btn-block">
                             <%= link_to "New Pin", { :action => "new", :controller => "pins", :map_id => @map.id } %>
                           </div>
-                          <div class="btn btn-default">
+                          <div class="btn btn-default btn-block">
                             <%= link_to "Back to All Maps", {:action => "index", :controller => "maps"}, :method => :get %>
                           </div>
-                          <div class="btn btn-default">
+                          <div class="btn btn-default btn-block">
                             <%= link_to "Email Map", {:action => "email_map", :controller => "maps"}, :method => :post %>
                           </div>
                         <% else %>
-                          <div class = "btn btn-default">
+                          <div class="btn btn-default btn-block">
                             <%= link_to "Back to profile", {:action => "show", :controller => "users", :id => @map.user_id }, :method => :get%>
                           </div>
                         <% end %>
                     </div>
                     <div class="col-sm-6 contacts">
                         <div class="info">
-                        <p class="contact-info-title"><i class="lnr lnr-map-marker"></i><%= @map.map_name %></p>
+                        <p class="contact-info-title"><i class="lnr lnr-map"></i><%= @map.map_name %></p>
                         <span class="contact-info-text"><%= @map.description %></span>
                         </div>
                         <div class="info">
-                        <p class="contact-info-title"><i class="lnr lnr-phone-handset"></i>By <%= @creator.first_name %> <%= @creator.last_name %></p>
+                        <p class="contact-info-title"><i class="lnr lnr-heart"></i>By <%= @creator.first_name %> <%= @creator.last_name %></p>
                         <a href="/users/<%= @creator.id %>"  class="contact-info-text">Full Profile</a>
                         </div>
                         <div class="info last">

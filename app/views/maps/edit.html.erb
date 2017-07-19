@@ -9,13 +9,13 @@ edit/delete buttons look wonky
                   <%= form_tag "/maps/#{@map.id}", method: :patch do %>
                       <form id="contactForm" data-toggle="validator">
                           <div class="row">
-                              <div class="col-md-6">
+                              <div class="col-md-12">
                                   <div class="form-group">
                                       <input type="text" class="form-control" id="name" value="<%= @map.map_name %>" name="map_name" placeholder="MAP NAME" required>
                                       <div class="help-block with-errors"></div>
                                   </div>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-12">
                                   <div class="form-group">
                                   <textarea value="<%= @map.description %>" id="message" name="description" class="form-control" rows="5"></textarea>
                                   <div class="help-block with-errors"></div>
@@ -27,10 +27,10 @@ edit/delete buttons look wonky
                           </div>
                       </form>
                     <% end %>
-                     <div class="btn btn-default">
+                     <div class="btn btn-default btn-block">
                         <%= link_to "Delete Map", {:action => "destroy", :id => @map.id}, :method => :delete %>
                       </div>
-                      <div class="btn btn-default">
+                      <div class="btn btn-default btn-block">
                         <%= link_to "Back to Map", {:action => "show", :id => @map.id}, :method => :get %>
                       </div>
                 </div>
