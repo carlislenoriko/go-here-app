@@ -35,7 +35,7 @@
 
           var map = new google.maps.Map(document.getElementById('map'), {
             center: new google.maps.LatLng(lat_center, lng_center),
-            zoom: 8
+            zoom: 14
           });
 
           var marker, i;
@@ -54,9 +54,7 @@
               })(marker, i));
           }
       });
-        
     }
-
     window.$scope = $scope;
   });
 

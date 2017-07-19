@@ -1,19 +1,34 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap">
 </script>
-<h1><%= @category.category_name %></h1>
-
-<div class="listy">
-  <% @pins.each do |pin| %>
-    <a href="/pins/<%= pin.id %>">
-    <%= pin.pin_name %></a><br>
-  <% end %>
-</div>
-
-<a href="/categories">Back to Categories</a>
-
 <div ng-app="app">
   <div ng-controller="categoriesCtrl" id='angularInit' ng-init="setup(<%= @category.id %>)">
-    <div id="map"></div>
+    <div id="map" class="big"></div>
+  </div>
+</div>
+
+<div id="pricing" data-section="pricing">
+  <div class="container">
+    <div class="container text-center">
+      <h1><%= @category.category_name %></h1>
+      <a href="/categories">Back to Categories</a>
+    </div>
+    <% @pins.each_slice(3) do |pin_threes| %>
+      <div class="row">
+      <% pin_threes.each do |pin| %>
+        <div class="col-md-4">
+          <div class="pricing-table">
+            <div class="pricing-table-title">
+            <h5 class="pricing-title">
+            <%= pin.pin_name %></a></h5></div>
+            <div class="pricint-table-content">
+            <%= pin.description %></div>
+            <div class="pricint-table-content">
+            <a href="/maps/<%= pin.map_id %>">See Full Map</a></div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,6 +1,25 @@
-<h1>Browse Pins by Category!</h1>
-
-<% @categories.each do |category| %>
-  <a href="/categories/<%= category.id %>">
-  <%= category.category_name %></a><br>
-<% end %>
+<div class="parallax-header">
+  <div class="header-content">
+    <h3 class="animated fadeInDown">Browse by Category</h3>
+    <div class="separator-line animated fadeInUp"> </div>
+  </div>
+</div>
+<div id="pricing" data-section="pricing">
+  <div class="container">
+    <% @categories.each_slice(3) do |category_threes| %>
+      <div class="row">
+      <% category_threes.each do |category| %>
+        <div class="col-md-4">
+          <div class="pricing-table">
+            <div class="pricing-table-title">
+            <h5 class="pricing-title"><a href="/categories/<%= category.id %>">
+            <%= category.category_name %></a></h5></div>
+            <div class="pricint-table-content">
+            <%= category.pins.count %> Locations Marked</div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,32 +1,42 @@
-<h1>Edit Pin</h1>
-
-<%= form_tag "/pins/#{@pin.id}", method: :patch do %>
-  <div>
-    <%= label_tag :pin_name %>
-    <%= text_field_tag :pin_name, @pin.pin_name %>
+<script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&libraries=places"></script>
+<div id="contact" data-section="contact">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-6">
+                  <h1>Edit Pin</h1>
+                  <!-- add contactForm id -->
+                    <%= form_tag "/pins/#{@pin.id}", method: :patch do %>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="pin_name" value="<%= @pin.pin_name %>">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name="address" class="form-control" id="input" value="<%= @pin.address %>">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class = "form-group">
+                        <textarea id="message" name="description" class="form-control" rows="5"><%= @pin.description %></textarea>
+                         <div class="help-block with-errors"></div>
+                      </div>
+                      <div>
+                        <%= hidden_field_tag "map_id", @pin.map_id %>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div>
+                        <select name="category_id" id="category_id">
+                          <% @categories.each do |category| %>
+                            <option value="<%= category.id %>"><%= category.category_name %></option>
+                          <% end %>
+                        </select>
+                      </div>
+                      <input class="btn btn-default" type="submit" value="Submit">
+                  <% end %>
+                </div>
+                <%= button_to "Delete Pin", {:action => "destroy", :id => @pin.id}, :method => :delete %>
+              </div>
+          </div>
+      </div>
   </div>
-  <div>
-    <%= label_tag :address %>
-    <%= text_field_tag :address, @pin.address %>
-  </div>
-  <div>
-    <%= label_tag :map_id %>
-    <%= text_field_tag :map_id, @pin.map_id %>
-  </div>
-  <div>
-     <select name="category_id" id="category_id">
-      <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.category_name %></option>
-      <% end %>
-    </select>
-  </div>
-  <div>
-    <%= label_tag :description %>
-    <%= text_area_tag :description, @pin.description %>
-  </div>
-  <div>
-    <%= submit_tag %>
-  </div>
-<% end %>
-
-<%= button_to "Delete Pin", {:action => "destroy", :id => @pin.id}, :method => :delete %>
+</div>

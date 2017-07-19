@@ -1,23 +1,33 @@
-<h2>EDIT UR ACCOUNT!!!</h2>
-
-<div class="signup">
-  <%= form_tag "/users/#{@user.id}", multipart: true, method: :patch do %>
-    <div class = "form-group">
-      <label>First Name</label>
-      <input type="text" name="first_name" value="<%= @user.first_name %>"class="form-control">
-    </div>
-    <div class = "form-group">
-      <label>Last Name</label>
-      <input type="text" name="last_name" value="<%= @user.last_name %>" class="form-control">
-    </div>
-    <div class = "form-group">
-      <label>Email</label>
-      <input type="text" name="email" value="<%= @user.email %>" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Upload new photo</label>
-      <%= file_field_tag :avatar %>
-    </div>
-    <input class="btn btn-default" type="submit" value="Submit">
-  <% end %>
-<div>
+<div id="contact" data-section="contact">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-6">
+                  <h1>Account Information</h1>
+                  <!-- add contactForm id -->
+                    <%= form_tag "/users/#{@user.id}", multipart: true, method: :patch do %>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="first_name" value="<%= @user.first_name %>">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name="last_name" class="form-control" id="input" value="<%= @user.last_name %>">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class = "form-group">
+                        <input id="message" name="email" value="<%= @user.email %>" class="form-control" rows="5">
+                         <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                        <label>Upload new photo</label>
+                        <%= file_field_tag :avatar %>
+                      </div>
+                      <input class="btn btn-default" type="submit" value="Submit">
+                  <% end %>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
