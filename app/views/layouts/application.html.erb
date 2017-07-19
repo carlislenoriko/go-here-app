@@ -24,29 +24,33 @@
     <div id="wrapper" class>
       <div id="sidebar-wrapper" data-section="facts">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><% if current_user %>
-              <a class="menu-item" href="/home">Go Here!</a>
+          <li class="sidebar-brand">
+          <% if current_user %>
+              <a class="menu-item" href="/home">Go Here!</a></li>
+              <li><a class="menu-item" href="/home">Home</a></li>
+              <li><a class="menu-item" href="/maps">Your Maps</a></li>
+              <li><i class="facts-icon lnr lnr-pencil"></i><a class="menu-item" href="/maps/new">New Map!</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a class="menu-item" href="/categories">Browse Categories</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a class="menu-item" href="/logout">Logout</a></li>
+              <li>
+              <% if current_user %>
+
+                <%= form_tag "/search_results", method: :post do %>
+                  <%= text_field_tag :search %>
+                  <%= submit_tag "Search" %>
+                <% end %>
+              <% end %>
+              </li>
             <% end %>
             <% if !current_user %>
               <a class="menu-item" href="/">Go Here!</a>
+              </li>
+              <li><a class="menu-item" href="/users/new">New Account</a></li>
+              <li><a class="menu-item" href="/login">Sign In</a></
+              </li>
             <% end %>
-          </li>
-          <li><a class="menu-item" href="/home">Home</a></li>
-          <li><a class="menu-item" href="/maps">Your Maps</a></li>
-          <li><i class="facts-icon lnr lnr-pencil"></i><a class="menu-item" href="/maps/new">New Map!</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a class="menu-item" href="/categories">Browse Categories</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a class="menu-item" href="/logout">Logout</a></li>
-          <li>
-          <% if current_user %>
-
-            <%= form_tag "/search_results", method: :post do %>
-              <%= text_field_tag :search %>
-              <%= submit_tag "Search" %>
-            <% end %>
-          <% end %>
-          </li>
           <li class="menu-footer">
             <p>cfujiyoshi@gmail.com</p>
           </li>
