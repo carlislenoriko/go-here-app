@@ -39,6 +39,8 @@ gem 'unirest'
 gem 'mail'
 gem 'actionmailer'
 gem 'figaro'
+gem 'nokogiri', '~> 1.8.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
