@@ -11,8 +11,3 @@ class UserMailer < ApplicationMailer
   end
 
 end
-
-
-
-# GMAIL_ADDRESS=go.here.app@gmail.com
-# GMAIL_PW=ActualizeRox

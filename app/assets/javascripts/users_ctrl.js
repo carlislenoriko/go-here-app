@@ -12,7 +12,7 @@
     }
 
     $window.initMap = function() {
-      $http.get("http://localhost:3000/api/v1/users/" + user_id).then(function(response){
+      $http.get("https://go-here.herokuapp.com/api/v1/users/" + user_id).then(function(response){
           $scope.maps = response.data.maps;
           console.log($scope.maps);
 
