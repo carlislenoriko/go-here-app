@@ -10,7 +10,7 @@ class HomeController < ApplicationController
         u = User.find(friend.follower_id)
         # puts u.first_name
         # puts u.id
-       @friends << User.find(friend.follower_id)
+        @friends << User.find(friend.follower_id)
       end
       render "home.html.erb"
     else
