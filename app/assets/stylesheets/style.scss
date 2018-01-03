@@ -978,6 +978,7 @@ ul.portfolio-items {
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 50px;
+    border-radius: 15px
 }
 
 .pricing-title {
@@ -986,6 +987,7 @@ ul.portfolio-items {
     font-size: 20px;
     font-weight: $bold;
     padding: 20px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .featured.pricing-title {
@@ -1015,6 +1017,7 @@ ul.portfolio-items {
 }
 
 .pricing-table-content li {
+    padding: 10px;
     margin-bottom: 15px;
 }
 
