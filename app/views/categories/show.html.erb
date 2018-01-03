@@ -10,7 +10,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaQ8CpQDU_UMuwN-ujOFeoxYU
 <div id="pricing" data-section="pricing">
   <div class="container">
     <div class="container text-center">
-      <h1><%= @category.category_name %></h1>
+      <h1 id="category title"><%= @category.category_name %></h1>
       <a href="/categories">Back to Categories</a>
     </div>
     <% @pins.each_slice(3) do |pin_threes| %>
