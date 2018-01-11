@@ -47,7 +47,7 @@
                 }
               })(marker, i));
           }
-      });
+      }).catch(angular.noop);
     }
     window.$scope = $scope;
   });
