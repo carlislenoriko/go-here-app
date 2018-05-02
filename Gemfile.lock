@@ -107,7 +107,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    paperclip (5.0.0)
+    paperclip (5.2.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -213,7 +213,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mail
   nokogiri (~> 1.8.1)
-  paperclip (~> 5.0.0)
+  paperclip (~> 5.2.0)
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.4)
@@ -227,4 +227,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.1
+   1.16.0
