@@ -11,7 +11,7 @@
     }
 
     $window.initMap = function() {
-      $http.get("http://localhost:3000/api/v1/categories/" + category_id).then(function(response){
+      $http.get("https://go-here.herokuapp.com/api/v1/categories/" + category_id).then(function(response){
           $scope.category = response.data;
 
           var pins = $scope.category.pins;
@@ -47,7 +47,7 @@
                 }
               })(marker, i));
           }
-      });
+      }).catch(angular.noop);
     }
     window.$scope = $scope;
   });
