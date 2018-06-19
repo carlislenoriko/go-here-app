@@ -23,7 +23,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaQ8CpQDU_UMuwN-ujOFeoxYU
                             <%= link_to "Back to All Maps", {:action => "index", :controller => "maps"}, :method => :get %>
                           </div>
                           <div class="btn btn-default btn-block">
+
+                            <form>Send to: <input type="text" name="recipient_email"></form>
                             <%= link_to "Email Map", {:action => "email_map", :controller => "maps"}, :method => :post %>
+
+
                           </div>
                         <% else %>
                           <div class="btn btn-default btn-block">

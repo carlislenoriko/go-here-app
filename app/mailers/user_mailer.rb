@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   def email_map(user)
     @user = user
     @recipient = "silly.carly@gmail.com" #email string?
-    @map = params[:map] #pass in map id somewhere
+    #@map = Map.find(params[:id]) #pass in map id somewhere
 
     mail(
       to: @recipient,
