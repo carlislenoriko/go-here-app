@@ -1,6 +1,6 @@
-# README
+# Go Here!
 
-Go Here! A web application to create and share customized Google maps. Users can create customizeable profiles, add special descriptions, and definitely do not need to know exact addresses to get a pin on a map.
+A web application to create and share customized Google maps. Users can create unique profiles, add special descriptions to maps and map pins, and definitely do not need to know exact addresses to get a pin on a map.
 
 ## Getting Started
 
